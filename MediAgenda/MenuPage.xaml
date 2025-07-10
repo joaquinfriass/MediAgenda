@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediAgenda.MenuPage"
+             Title="MenuPage">
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <Label Text="Bienvenido a MediAgenda" FontSize="26" HorizontalOptions="Center"/>
+
+        <Button Text="🗓️ Nuevo Turno" Clicked="OnNuevoTurnoClicked"/>
+        <Button Text="📋 Mis Turnos" Clicked="OnMisTurnosClicked"/>
+        <Button Text="🏥 Clínicas Adheridas" Clicked="OnClinicasClicked"/>
+        <Button Text="🩺 Profesionales Adheridos" Clicked="OnProfesionalesClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

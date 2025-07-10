@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediAgenda.MisTurnosPage"
+             Title="MisTurnosPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="📋 Turnos Solicitados" FontSize="20" />
+            <CollectionView x:Name="turnosSolicitadosView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" Padding="10">
+                            <Label Text="{Binding Descripcion}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="🟢 Turnos Aceptados" FontSize="20" />
+            <CollectionView x:Name="turnosAceptadosView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Green" Padding="10">
+                            <StackLayout>
+                                <Label Text="{Binding Descripcion}" />
+                                <Button Text="Cancelar"
+                                        Clicked="OnCancelarTurnoClicked"
+                                        CommandParameter="{Binding}" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="📌 Turnos Realizados" FontSize="20" />
+            <CollectionView x:Name="turnosRealizadosView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Blue" Padding="10">
+                            <Label Text="{Binding Descripcion}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
