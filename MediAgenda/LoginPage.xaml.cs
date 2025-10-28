@@ -9,7 +9,7 @@ public partial class LoginPage : ContentPage
 
     private async void OnLoginClicked(object sender, EventArgs e)
     {
-        string email = emailEntry.Text?.Trim();
+        string? email = emailEntry.Text?.Trim();
         string password = passwordEntry.Text;
 
         // Simulación simple
