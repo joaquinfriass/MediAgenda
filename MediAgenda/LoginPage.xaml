@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediAgenda.LoginPage"
+             Title="Iniciar Sesión"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+
+            <!-- Logo/Título -->
+            <Frame BackgroundColor="#6200EA" 
+                   CornerRadius="100" 
+                   HeightRequest="120" 
+                   WidthRequest="120" 
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   HasShadow="True">
+                <Label Text="🏥" 
+                       FontSize="60" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <Label Text="MediAgenda" 
+                   FontSize="36" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#6200EA"/>
+
+            <Label Text="Tu salud, al alcance de un toque" 
+                   FontSize="16" 
+                   HorizontalOptions="Center"
+                   TextColor="#666"
+                   Margin="0,0,0,30"/>
+
+            <!-- Email -->
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="15">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="📧 Correo electrónico" 
+                           TextColor="#666" 
+                           FontSize="14"/>
+                    <Entry x:Name="emailEntry" 
+                           Placeholder="ejemplo@mail.com"
+                           Keyboard="Email"
+                           TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Contraseña -->
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="15">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="🔒 Contraseña" 
+                           TextColor="#666" 
+                           FontSize="14"/>
+                    <Entry x:Name="passwordEntry" 
+                           Placeholder="Ingresa tu DNI"
+                           IsPassword="True"
+                           TextColor="#333"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Mensaje de error -->
+            <Label x:Name="messageLabel" 
+                   TextColor="Red" 
+                   IsVisible="False"
+                   HorizontalOptions="Center"
+                   FontSize="14"/>
+
+            <!-- Botón Iniciar Sesión -->
+            <Button Text="Iniciar Sesión" 
+                    BackgroundColor="#6200EA"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="55"
+                    FontSize="18"
+                    Margin="0,10,0,0"
+                    Clicked="OnLoginClicked"/>
+
+            <!-- Info de prueba -->
+            <Frame BackgroundColor="#E3F2FD" 
+                   CornerRadius="10" 
+                   Padding="15"
+                   Margin="0,20,0,0">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="💡 Datos de prueba:" 
+                           FontAttributes="Bold" 
+                           TextColor="#1976D2"
+                           FontSize="14"/>
+                    <Label Text="Email: juan@example.com" 
+                           TextColor="#666"
+                           FontSize="13"/>
+                    <Label Text="Contraseña: 12345678" 
+                           TextColor="#666"
+                           FontSize="13"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

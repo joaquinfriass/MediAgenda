@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediAgenda.MenuPage"
+             Title="Menú Principal"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="Center">
+
+            <!-- Título con nombre del usuario -->
+            <VerticalStackLayout Spacing="5" Margin="0,30,0,20">
+                <Label x:Name="labelBienvenida"
+                       Text="Bienvenido a MediAgenda"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#333"/>
+                <Label x:Name="labelUsuario"
+                       x:FieldModifier="public"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       TextColor="#666"/>
+            </VerticalStackLayout>
+
+            <Button Text="📅 Nuevo Turno"
+                    BackgroundColor="#6200EA"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Clicked="OnNuevoTurnoClicked"/>
+
+            <Button Text="📋 Mis Turnos"
+                    BackgroundColor="#6200EA"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Clicked="OnMisTurnosClicked"/>
+
+            <Button Text="🏥 Clínicas Adheridas"
+                    BackgroundColor="#6200EA"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Clicked="OnClinicasClicked"/>
+
+            <Button Text="👨‍⚕️ Profesionales Adheridos"
+                    BackgroundColor="#6200EA"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Clicked="OnProfesionalesClicked"/>
+
+            <!-- Botón Cerrar Sesión -->
+            <Button Text="🚪 Cerrar Sesión"
+                    BackgroundColor="#F44336"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Margin="0,30,0,0"
+                    Clicked="OnCerrarSesionClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

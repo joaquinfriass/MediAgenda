@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediAgenda.MisTurnosPage"
+             Title="Mis Turnos"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Turnos Solicitados -->
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="📋" FontSize="24"/>
+                    <Label Text="Turnos Solicitados" 
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           TextColor="#FF9800"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <CollectionView x:Name="turnosSolicitadosView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White" 
+                                   CornerRadius="15" 
+                                   Padding="15" 
+                                   Margin="0,5"
+                                   HasShadow="True"
+                                   BorderColor="#FF9800">
+                                <VerticalStackLayout Spacing="10">
+                                    <Label Text="{Binding Descripcion}" 
+                                           TextColor="#333"
+                                           FontSize="15"/>
+                                    <Button Text="❌ Cancelar Turno"
+                                            BackgroundColor="#F44336"
+                                            TextColor="White"
+                                            FontSize="14"
+                                            CornerRadius="10"
+                                            HeightRequest="40"
+                                            Clicked="OnCancelarTurnoClicked"
+                                            CommandParameter="{Binding}" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- Turnos Aceptados -->
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="✅" FontSize="24"/>
+                    <Label Text="Turnos Aceptados" 
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           TextColor="#4CAF50"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <CollectionView x:Name="turnosAceptadosView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White" 
+                                   CornerRadius="15" 
+                                   Padding="15" 
+                                   Margin="0,5"
+                                   HasShadow="True"
+                                   BorderColor="#4CAF50">
+                                <VerticalStackLayout Spacing="10">
+                                    <Label Text="{Binding Descripcion}" 
+                                           TextColor="#333"
+                                           FontSize="15"/>
+                                    <Button Text="❌ Cancelar Turno"
+                                            BackgroundColor="#F44336"
+                                            TextColor="White"
+                                            FontSize="14"
+                                            CornerRadius="10"
+                                            HeightRequest="40"
+                                            Clicked="OnCancelarTurnoClicked"
+                                            CommandParameter="{Binding}" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- Turnos Realizados -->
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="📌" FontSize="24"/>
+                    <Label Text="Turnos Realizados" 
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           TextColor="#2196F3"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <CollectionView x:Name="turnosRealizadosView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White" 
+                                   CornerRadius="15" 
+                                   Padding="15" 
+                                   Margin="0,5"
+                                   HasShadow="True"
+                                   BorderColor="#2196F3">
+                                <Label Text="{Binding Descripcion}" 
+                                       TextColor="#333"
+                                       FontSize="15"/>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

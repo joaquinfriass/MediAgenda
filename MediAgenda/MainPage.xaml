@@ -1,0 +1,75 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediAgenda.MainPage"
+             Title="Turnos Médicos"
+             BackgroundColor="#F5F5F5">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Título -->
+        <Label Text="📅 Solicitar Nuevo Turno"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#6200EA"
+               Margin="0,10,0,20"/>
+
+        <!-- Picker de Especialidades -->
+        <Frame BackgroundColor="White" CornerRadius="12" HasShadow="True" Padding="10">
+            <Picker x:Name="pickerEspecialidad"
+                    Title="Seleccione especialidad"
+                    SelectedIndexChanged="OnEspecialidadChanged"/>
+        </Frame>
+
+        <!-- Picker de Profesional -->
+        <Frame BackgroundColor="White" CornerRadius="12" HasShadow="True" Padding="10">
+            <Picker x:Name="pickerProfesional"
+                    Title="Seleccione profesional"
+                    IsEnabled="False"
+                    SelectedIndexChanged="OnProfesionalChanged"
+                    ItemDisplayBinding="{Binding Nombre}"/>
+        </Frame>
+
+        <!-- Picker de Fecha -->
+        <Frame BackgroundColor="White" CornerRadius="12" HasShadow="True" Padding="10">
+            <Picker x:Name="pickerFecha"
+                    Title="Seleccione fecha"
+                    IsEnabled="False"
+                    SelectedIndexChanged="OnFechaChanged"/>
+        </Frame>
+
+        <!-- Picker de Hora -->
+        <Frame BackgroundColor="White" CornerRadius="12" HasShadow="True" Padding="10">
+            <Picker x:Name="pickerHora"
+                    Title="Seleccione horario"
+                    IsEnabled="False"/>
+        </Frame>
+
+        <!-- Motivo -->
+        <Frame BackgroundColor="White" CornerRadius="12" HasShadow="True" Padding="10">
+            <Editor x:Name="editorMotivo"
+                    Placeholder="Motivo (opcional)"
+                    AutoSize="TextChanges"
+                    HeightRequest="100"/>
+        </Frame>
+
+        <!-- Botón Confirmar Turno -->
+        <Button Text="Confirmar turno"
+                x:Name="btnConfirmar"
+                Clicked="OnSolicitarTurnoClicked"
+                BackgroundColor="#6200EA"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50"
+                IsEnabled="True"/>
+
+        <!-- Mensaje de Resultado -->
+        <Label x:Name="lblResultado"
+               Text="Turno confirmado!"
+               TextColor="Green"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               IsVisible="False"/>
+
+    </VerticalStackLayout>
+</ContentPage>
